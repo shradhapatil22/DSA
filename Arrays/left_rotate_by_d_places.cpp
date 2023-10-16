@@ -3,21 +3,22 @@ using namespace std;
 
 int main()
 {
-    int n,flag=1;
+    int n,temp;
     cout<<"enter n: "<<endl;
     cin>>n;
-    int a[n];
+    int a[10];
     cout<<"enter array elements: "<<endl;
     for(int i=0; i<n; i++)
     {
         cin>>a[i];
     }
+
+    temp=a[0];
     for(int i=0; i<n; i++)
     {
-        if(a[i]<=a[i+1]) flag=0;
+        a[i-1]=a[i];
     }
-    if(flag==0) cout<<"Array not sorted"<<endl;
-    if(flag==1) cout<<"Array  sorted"<<endl;
+    a[n-1]=temp;
+return 0;
 
-    return 0;
 }
